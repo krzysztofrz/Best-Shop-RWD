@@ -1,0 +1,22 @@
+{
+    "sourceFile": "scss/_reset.scss",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1647607651215,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1647607659615,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,5 @@\n-*\n\\ No newline at end of file\n+*{\n+    padding: 0;\n+    margin: 0;\n+    box\n+}\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1647607651215,
+            "name": "Commit-0",
+            "content": "*"
+        }
+    ]
+}

@@ -1,0 +1,26 @@
+{
+    "sourceFile": "gulpfile.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1647607767631,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1647608284525,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n // Ścieżka do aktualnie wykonywanego zadania\n-const entryPath = \"01_Dzien_1/01_Podstawy/01_Pierwsze_kroki_z_SCSS\";\n+const entryPath = \"BEST\";\n \n const gulp = require(\"gulp\");\n const sass = require(\"gulp-sass\")(require(\"sass\"));\n const sourcemaps = require(\"gulp-sourcemaps\");\n"
+                },
+                {
+                    "date": 1647608293792,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n // Ścieżka do aktualnie wykonywanego zadania\n-const entryPath = \"BEST-SHOP-\";\n+const entryPath = \"BEST-SHOP-RWD\";\n \n const gulp = require(\"gulp\");\n const sass = require(\"gulp-sass\")(require(\"sass\"));\n const sourcemaps = require(\"gulp-sourcemaps\");\n"
+                }
+            ],
+            "date": 1647607767631,
+            "name": "Commit-0",
+            "content": "// Ścieżka do aktualnie wykonywanego zadania\nconst entryPath = \"01_Dzien_1/01_Podstawy/01_Pierwsze_kroki_z_SCSS\";\n\nconst gulp = require(\"gulp\");\nconst sass = require(\"gulp-sass\")(require(\"sass\"));\nconst sourcemaps = require(\"gulp-sourcemaps\");\nconst autoprefixer = require(\"gulp-autoprefixer\");\nconst browserSync = require(\"browser-sync\").create();\n\nfunction compileSass(done) {\n    gulp\n        .src(entryPath + \"/scss/main.scss\")\n        .pipe(sourcemaps.init())\n        .pipe(sass({ outputStyle: \"expanded\" }).on(\"error\", sass.logError))\n        .pipe(autoprefixer())\n        .pipe(sourcemaps.write(\".\"))\n        .pipe(gulp.dest(entryPath + \"/css\"));\n\n    done();\n}\n\nfunction watcher(done) {\n    browserSync.init({\n        server: \"./\" + entryPath,\n    });\n\n    gulp.watch(entryPath + \"/scss/**/*.scss\", gulp.series(compileSass, reload));\n    gulp.watch(entryPath + \"/*.html\", gulp.series(reload));\n\n    done();\n}\n\nfunction reload(done) {\n    browserSync.reload();\n    done();\n}\n\nexports.sass = gulp.parallel(compileSass);\nexports.default = gulp.parallel(compileSass, watcher);"
+        }
+    ]
+}
